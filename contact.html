@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — InnerAtlas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>InnerAtlas</div>
+      </div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="app.html">The App</a>
+        <a href="evidence.html">Evidence</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" style="color:var(--text); background:rgba(255,255,255,.06);">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+
+      <!-- LEFT: VISUAL / BRAND PANEL -->
+      <div class="card">
+        <div class="kicker">Get in touch</div>
+        <h1 style="margin-top:10px;">Let’s explore fit for your campus or organization.</h1>
+        <p>
+          We’re currently conducting I-Corps–inspired customer discovery and speaking with
+          universities and student organizations about pilot programs and partnerships.
+        </p>
+
+        <div class="figure" style="margin-top:14px;">
+          <!-- You can swap this image if you prefer another InnerAtlas visual -->
+          <img src="assets/hero.png" alt="InnerAtlas app preview">
+        </div>
+
+        <div class="soft" style="margin-top:14px;">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Science-first • Faculty-developed • Institution-ready
+          </div>
+          <p style="margin-top:10px;">
+            Conversations are exploratory and low-pressure. The goal is understanding needs,
+            alignment, and potential pilot structures.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT: EMAIL FORM ONLY -->
+      <div class="card">
+        <div class="kicker">Request a conversation</div>
+        <h2 style="margin-top:8px;">Send a brief note</h2>
+        <p class="smallnote">
+          This form opens a pre-filled email in your mail app. No information is stored on the website.
+        </p>
+
+        <form class="form" id="contactForm">
+          <div class="row">
+            <input id="name" placeholder="Your name" required />
+            <input id="org" placeholder="University / organization" required />
+          </div>
+
+          <div class="row">
+            <input id="email" type="email" placeholder="Your email" required />
+            <input id="role" placeholder="Role / title (optional)" />
+          </div>
+
+          <textarea
+            id="msg"
+            placeholder="What would you like to explore? (pilot, campus deployment, Greek life partnership, reporting needs, etc.)">
+          </textarea>
+
+          <button type="submit" class="btn primary">Create email draft</button>
+
+          <div class="smallnote">
+            Clicking the button will open your email client with a drafted message.
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+    <div class="footer">
+      <div>© <span id="yr"></span> InnerAtlas</div>
+      <div class="smallnote">Clemson-adjacent • Evidence-based • Institutional partnerships</div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    const RECIPIENT = "kaileib@clemson.edu"; // hidden recipient; not shown on page
+
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const org = document.getElementById("org").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const role = document.getElementById("role").value.trim();
+      const msg = document.getElementById("msg").value.trim() || "(no additional details provided)";
+
+      const subject = encodeURIComponent(`InnerAtlas inquiry — ${org}`);
+      const body = encodeURIComponent(
+`Hi,
+
+My name is ${name}${role ? ` (${role})` : ""} at ${org}.
+You can reach me at: ${email}
+
+Message:
+${msg}
+
+Best,
+${name}`
+      );
+
+      window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`;
+    });
+  </script>
+
+</body>
+</html>

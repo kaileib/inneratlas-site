@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The App — InnerAtlas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="brand"><div class="logo" aria-hidden="true"></div><div>InnerAtlas</div></div>
+        <div class="navlinks">
+          <a href='index.html'>Home</a>
+          <a href='app.html' style='color: var(--text); background: rgba(255,255,255,.06);'>The App</a>
+          <a href='evidence.html'>Evidence</a>
+          <a href='pricing.html'>Pricing</a>
+          <a href='contact.html'>Contact</a>
+        </div>
+      </div>
+    </div>
+    
+<div class="wrap">
+
+<section class="card">
+  <div class="kicker">The app</div>
+  <h1>What students experience in InnerAtlas</h1>
+  <p>
+    InnerAtlas pairs an virtual coach with a guided, customizable wellness journey—built using evidence-based tools to support college students' mental health.
+  </p>
+</section>
+
+<section class="section grid">
+  <div class="card">
+    <div class="kicker">Key feature</div>
+    <h2>Virtual coach</h2>
+    <p>Personalized guidance through speech or text, designed to work through stressors and practice coping skills.</p>
+    <div class="figure"><img src="assets/coach.png" alt="Virtual coach screenshots" /></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">More than the coach</div>
+    <h2>Core features</h2>
+    <div class="cols3" style="grid-template-columns:1fr; margin-top:12px;">
+      <div class="soft">
+        <h2 style="margin:0 0 6px; font-size:18px;">Customizable journey map</h2>
+        <p>A calming, map-based progression that gives structure and a sense of movement toward wellness.</p>
+      </div>
+      <div class="soft">
+        <h2 style="margin:0 0 6px; font-size:18px;">Mood & symptom tracker</h2>
+        <p>Daily check-ins with brief questionnaires for anxiety, depressive symptoms, and stress—paired with tailored feedback.</p>
+      </div>
+      <div class="soft">
+        <h2 style="margin:0 0 6px; font-size:18px;">Journaling</h2>
+        <p>Journaling feature to support reflection.</p>
+      </div>
+      <div class="soft">
+        <h2 style="margin:0 0 6px; font-size:18px;">On-demand resources</h2>
+        <p>In-the-moment tools for coping and emotion regulation—available when students need it most.</p>
+      </div>
+      <div class="soft">
+        <h2 style="margin:0 0 6px; font-size:18px;">Customization</h2>
+        <p>Students can personalize the experience (e.g., avatar/coach features) to increase ownership and engagement.</p>
+        <div class="figure" style="margin-top:10px;"><img src="assets/avatarcustom.png" alt="Avatar customization" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div>© <span id="yr"></span> InnerAtlas</div>
+  <div class="smallnote">Science as the foundation • Accessible • Co-designed with students</div>
+</div>
+</div>
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
